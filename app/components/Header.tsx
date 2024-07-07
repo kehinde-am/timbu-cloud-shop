@@ -32,14 +32,17 @@ const Header: React.FC = () => {
           </button>
         </div>
       </div>
-      <div className="container mx-auto flex justify-between items-center mt-8">
-        <div className="w-1/2">
+      <div className="container mx-auto flex justify-between items-center mt-8 relative">
+        <div className="w-1/2 pl-8">
           <h1 className="text-4xl font-bold text-[#07034B]" style={{ fontFamily: 'Dela Gothic One' }}>
-            We are a major distributor of Oppo phones and accessories in Nigeria.
+            We are a major<br></br> distributor of <br></br>Oppo phones and<br></br> accessories in<br></br> Nigeria.
           </h1>
         </div>
-        <div className="w-1/2 flex justify-end">
-          <Image src="/images/reno.png" alt="Oppo phones" width={500} height={300} />
+        <div className="w-1/2 flex justify-end relative">
+          <div className="relative">
+            <Image src="/images/reno.png" alt="Oppo phones" width={600} height={451} />
+            <Image src="/images/oppo-buds.png" alt="Oppo buds" width={205.75} height={271.14} className="absolute bottom-[-1px] left-[-150px]" />
+          </div>
         </div>
       </div>
     </div>
