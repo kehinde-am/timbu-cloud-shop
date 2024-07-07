@@ -34,7 +34,7 @@ const Header: React.FC = () => {
       </div>
       <div className="container mx-auto flex justify-between items-center mt-8">
         <div className="w-1/2">
-          <h1 className="text-4xl font-bold text-blue-900" style={{ fontFamily: 'Dela Gothic One' }}>
+          <h1 className="text-4xl font-bold text-[#07034B]" style={{ fontFamily: 'Dela Gothic One' }}>
             We are a major distributor of Oppo phones and accessories in Nigeria.
           </h1>
         </div>
