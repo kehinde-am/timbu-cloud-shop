@@ -52,7 +52,7 @@ const Cart: React.FC = () => {
   };
 
   const handleApplyPromoCode = () => {
-    // Handle promo code logic here
+    
   };
 
   const total = items.reduce((acc, item) => acc + item.price * item.quantity, 0);
@@ -106,18 +106,18 @@ const Cart: React.FC = () => {
             </div>
           </div>
           <div className="text-right">
-            <div className="text-gray-500">Discount:</div>
-            <div className="text-gray-500">₦{discount.toLocaleString()}</div>
-            <div className="text-2xl font-bold mt-2">TOTAL:</div>
-            <div className="text-2xl font-bold text-[#FFBB00]">₦{(total - discount).toLocaleString()}</div>
-            <button className="bg-[#FFBB00] text-white py-2 px-4 rounded-lg mt-4">
+            <div className="text-[#FFBB00] font-bold">Discount</div>
+            <div className="text-black font-bold">₦{discount.toLocaleString()}</div>
+            <div className="text-2xl font-bold mt-2 text-[#FFBB00]">TOTAL</div>
+            <div className="text-2xl font-bold text-black">₦{(total - discount).toLocaleString()}</div>
+            <button className="bg-[#FFBB00] font-bold text-black py-2 px-4 rounded-lg mt-4">
               Proceed to Checkout
             </button>
           </div>
         </div>
         <div className="flex justify-between mt-8">
           <Link href="/products">
-            <button className="bg-white border border-[#FFBB00] text-[#FFBB00] py-2 px-4 rounded-lg">
+            <button className="bg-white border border-[#FFBB00] font-bold text-black py-2 px-4 rounded-lg">
               Continue Shopping
             </button>
           </Link>
