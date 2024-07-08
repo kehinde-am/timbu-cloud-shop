@@ -1,6 +1,7 @@
+"use client"
 import React, { useState } from 'react';
 import Link from 'next/link';
-import CartItem from './components/CartItem';
+import CartItem from './CartItem';
 
 const Cart: React.FC = () => {
   const [cartItems, setCartItems] = useState([
@@ -86,8 +87,8 @@ const Cart: React.FC = () => {
         <p className="text-2xl font-bold">Total: ₦{finalPrice.toLocaleString()}</p>
       </div>
       <div className="flex justify-between">
-        <Link href="/products">
-          <a className="border py-2 px-4">Continue Shopping</a>
+        <Link href="/products" className="border py-2 px-4">
+          Continue Shopping
         </Link>
         <button className="bg-yellow-500 text-black py-2 px-4">Proceed to Checkout</button>
       </div>

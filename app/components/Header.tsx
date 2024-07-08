@@ -27,10 +27,8 @@ const Header: React.FC = () => {
           <button aria-label="Favorites" className="text-gray-700">
             <Image src="/icons/heart.svg" alt="Favorites" width={24} height={24} />
           </button>
-          <Link href="/cart">
-            <a aria-label="Cart" className="text-gray-700">
-              <Image src="/icons/cart.svg" alt="Cart" width={24} height={24} />
-            </a>
+          <Link href="/cart" className="text-gray-700">
+            <Image src="/icons/cart.svg" alt="Cart" width={24} height={24} />
           </Link>
         </div>
       </div>
