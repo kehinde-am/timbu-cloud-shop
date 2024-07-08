@@ -41,7 +41,7 @@ const CartItem: React.FC<CartItemProps> = ({ item, onQuantityChange, onRemove })
         </div>
       </div>
       <div className="flex flex-col items-center">
-        <div className="font-bold text-yellow-500 mb-2">TOTAL:</div>
+        <div className="font-bold text-yellow-500">TOTAL:</div>
         <div className="font-bold text-black">₦{(item.price * item.quantity).toLocaleString()}</div>
       </div>
       <div className="flex items-center">
