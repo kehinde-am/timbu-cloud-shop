@@ -10,14 +10,14 @@ const Checkout: React.FC = () => {
     <>
       <NavBar />
       <Breadcrumb />
-      <div className="container mx-auto p-10">
+      <div className="container mx-auto p-4 md:p-10">
         <h1 className="text-2xl font-bold mb-6">Checkout</h1>
-        <div className="flex space-x-4 mb-8">
-          <div className="flex items-center space-x-2">
+        <div className="flex flex-col md:flex-row md:space-x-4 mb-8">
+          <div className="flex items-center space-x-2 mb-2 md:mb-0">
             <span className="bg-gray-200 text-[#1B1A1A] font-medium py-1 px-3 rounded-full">1</span>
             <span>Shopping Cart</span>
           </div>
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-2 mb-2 md:mb-0">
             <span className="bg-[#FFBB00] text-[#1B1A1A] font-medium py-1 px-3 rounded-full">2</span>
             <span>Checkout</span>
           </div>
@@ -54,20 +54,24 @@ const Checkout: React.FC = () => {
           </div>
           <div>
             <h2 className="text-xl font-bold mb-2">2. Delivery Method</h2>
-            <div className="flex flex-col md:flex-row justify-between">
-              <div>
+            <div className="flex flex-col md:flex-row justify-between space-y-4 md:space-y-0">
+              <div className="flex flex-col md:flex-row items-start md:items-center">
                 <input type="radio" id="homeDelivery" name="deliveryMethod" className="mr-2" />
-                <label htmlFor="homeDelivery">Home Delivery</label>
-                <p className="text-[#5F5B5B]">To be delivered to your delivery address above</p>
-                <p className="text-[#1B1A1A]">Estimated Delivery Time: 3 to 5 working days</p>
-                <p className="text-[#FFBB00] font-bold">COST: ₦10,500.00</p>
+                <div>
+                  <label htmlFor="homeDelivery">Home Delivery</label>
+                  <p className="text-[#5F5B5B]">To be delivered to your delivery address above</p>
+                  <p className="text-[#1B1A1A]">Estimated Delivery Time: 3 to 5 working days</p>
+                  <p className="text-[#FFBB00] font-bold">COST: ₦10,500.00</p>
+                </div>
               </div>
-              <div>
+              <div className="flex flex-col md:flex-row items-start md:items-center">
                 <input type="radio" id="shopPickup" name="deliveryMethod" className="mr-2" />
-                <label htmlFor="shopPickup">Shop Pickup</label>
-                <p className="text-[#5F5B5B]">To be picked up by you at the physical branch</p>
-                <p className="text-[#1B1A1A]">Estimated Delivery Time: Nil</p>
-                <p className="text-[#FFBB00] font-bold">COST: Free</p>
+                <div>
+                  <label htmlFor="shopPickup">Shop Pickup</label>
+                  <p className="text-[#5F5B5B]">To be picked up by you at the physical branch</p>
+                  <p className="text-[#1B1A1A]">Estimated Delivery Time: Nil</p>
+                  <p className="text-[#FFBB00] font-bold">COST: Free</p>
+                </div>
               </div>
             </div>
           </div>
@@ -75,11 +79,11 @@ const Checkout: React.FC = () => {
             <h2 className="text-xl font-bold mb-2">3. Payment Information</h2>
             <div>
               <input type="radio" id="bankTransfer" name="paymentMethod" className="mr-2" />
-              <label htmlFor="bankTransfer font-medium">Bank Transfer</label>
+              <label htmlFor="bankTransfer" className="font-medium">Bank Transfer</label>
             </div>
             <div className="mt-2">
               <input type="radio" id="payViaCard" name="paymentMethod" className="mr-2" />
-              <label htmlFor="payViaCard font-medium">Pay via Card</label>
+              <label htmlFor="payViaCard" className="font-medium">Pay via Card</label>
             </div>
             <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
@@ -112,7 +116,7 @@ const Checkout: React.FC = () => {
             <input type="checkbox" className="mr-2" />
             <label>I agree to the terms and conditions of the checkout process of HilltTech Inc.</label>
           </div>
-          <div className="flex justify-between mt-8 items-center">
+          <div className="flex flex-col md:flex-row justify-between mt-8 items-center space-y-4 md:space-y-0">
             <Link href="/cart">
               <button className="bg-white border border-[#FFBB00] text-[#1B1A1A] font-bold py-2 px-4 rounded-lg">
                 Back to Cart
@@ -124,7 +128,6 @@ const Checkout: React.FC = () => {
           </div>
         </form>
       </div>
-      
     </>
   );
 };
