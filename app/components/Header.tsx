@@ -27,15 +27,17 @@ const Header: React.FC = () => {
           <button aria-label="Favorites" className="text-gray-700">
             <Image src="/icons/heart.svg" alt="Favorites" width={24} height={24} />
           </button>
-          <button aria-label="Cart" className="text-gray-700">
-            <Image src="/icons/cart.svg" alt="Cart" width={24} height={24} />
-          </button>
+          <Link href="/cart">
+            <a aria-label="Cart" className="text-gray-700">
+              <Image src="/icons/cart.svg" alt="Cart" width={24} height={24} />
+            </a>
+          </Link>
         </div>
       </div>
       <div className="container mx-auto flex justify-between items-center mt-8 relative">
-        <div className="w-1/2 pl-8">
+        <div className="w-1/2">
           <h1 className="text-4xl font-bold text-[#07034B]" style={{ fontFamily: 'Dela Gothic One' }}>
-            We are a major<br></br> distributor of <br></br>Oppo phones and<br></br> accessories in<br></br> Nigeria.
+            We are a major<br /> distributor of <br />Oppo phones and<br /> accessories in<br /> Nigeria.
           </h1>
         </div>
         <div className="w-1/2 flex justify-end relative">
