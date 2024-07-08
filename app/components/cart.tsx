@@ -64,15 +64,15 @@ const Cart: React.FC = () => {
         <h1 className="text-2xl font-bold mb-4">My Shopping Cart</h1>
         <div className="flex space-x-4 mb-8">
           <div className="flex items-center space-x-2">
-            <span className="bg-[#FFBB00] text-white py-1 px-3 rounded-full">1</span>
+            <span className="bg-[#FFBB00] text-black py-1 px-3 rounded-full">1</span>
             <span>Shopping Cart</span>
           </div>
           <div className="flex items-center space-x-2 text-gray-500">
-            <span className="bg-gray-200 text-gray-500 py-1 px-3 rounded-full">2</span>
+            <span className="bg-gray-200 text-black py-1 px-3 rounded-full">2</span>
             <span>Checkout</span>
           </div>
           <div className="flex items-center space-x-2 text-gray-500">
-            <span className="bg-gray-200 text-gray-500 py-1 px-3 rounded-full">3</span>
+            <span className="bg-gray-200 text-black py-1 px-3 rounded-full">3</span>
             <span>Order Complete</span>
           </div>
         </div>
@@ -88,7 +88,7 @@ const Cart: React.FC = () => {
         </div>
         <div className="flex justify-between items-start mt-8">
           <div className="flex flex-col">
-            <label className="mb-2 font-bold">Promotional Code</label>
+            <label className="mb-2 font-bold text-black">Promotional Code</label>
             <div className="flex items-center">
               <input
                 type="text"
@@ -99,7 +99,7 @@ const Cart: React.FC = () => {
               />
               <button
                 onClick={handleApplyPromoCode}
-                className="bg-[#FFBB00] text-white py-2 px-4 rounded-lg ml-2"
+                className="bg-[#FFBB00] text-black py-2 px-4 rounded-lg ml-2 font-bold"
               >
                 Apply
               </button>
