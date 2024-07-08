@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
-import { faInstagram, faTwitter, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { faInstagram, faXTwitter, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 const Footer: React.FC = () => {
   return (
@@ -40,7 +40,7 @@ const Footer: React.FC = () => {
                 <FontAwesomeIcon icon={faInstagram} style={{ width: '40px', height: '40px' }} />
               </Link>
               <Link href="#" className="mr-4">
-                <FontAwesomeIcon icon={faTwitter} style={{ width: '40px', height: '40px' }} />
+                <FontAwesomeIcon icon={faXTwitter} style={{ width: '40px', height: '40px' }} />
               </Link>
               <Link href="#">
                 <FontAwesomeIcon icon={faWhatsapp} style={{ width: '40px', height: '40px' }} />
