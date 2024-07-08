@@ -4,9 +4,8 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import CartItem from './CartItem';
 import Breadcrumb from './Breadcrumb';
-import Subscribe from './Subscribe';
-import Footer from './Footer';
-import NavBar from './Navbar'; // Ensure NavBar is imported correctly
+import NavBar from './Navbar';
+import { useRouter } from 'next/navigation';
 
 const cartItems = [
   {
@@ -39,6 +38,7 @@ const Cart: React.FC = () => {
   const [items, setItems] = useState(cartItems);
   const [promoCode, setPromoCode] = useState('');
   const [discount, setDiscount] = useState(50000); // Static discount for demonstration purposes
+  const router = useRouter();
 
   const handleQuantityChange = (index: number, quantity: number) => {
     const newItems = [...items];
@@ -60,6 +60,10 @@ const Cart: React.FC = () => {
   };
 
   const total = items.reduce((acc, item) => acc + item.price * item.quantity, 0);
+
+  const handleProceedToCheckout = () => {
+    router.push('/checkout');
+  };
 
   return (
     <>
@@ -123,13 +127,11 @@ const Cart: React.FC = () => {
               Continue Shopping
             </button>
           </Link>
-          <button className="bg-[#FFBB00] text-white py-2 px-4 rounded-lg">
+          <button onClick={handleProceedToCheckout} className="bg-[#FFBB00] text-white py-2 px-4 rounded-lg">
             Proceed to Checkout
           </button>
         </div>
       </div>
-      <Subscribe />
-      <Footer />
     </>
   );
 };
