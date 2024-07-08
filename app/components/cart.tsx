@@ -10,7 +10,7 @@ const cartItems = [
     productNumber: 'HT008',
     color: 'Orange',
     price: 165000,
-    image: '/images/Rectangle 40.png',
+    image: '/images/Rectangle 39.png',
     quantity: 1,
   },
   {
@@ -24,7 +24,7 @@ const cartItems = [
   {
     name: 'Oppo Reno 11 5G',
     productNumber: 'HT003',
-    color: 'Green',
+    color: '#B2D2C5',
     price: 300000,
     image: '/images/Rectangle 34.png',
     quantity: 1,
@@ -105,20 +105,20 @@ const Cart: React.FC = () => {
         </div>
         <div className="text-right">
           <div className="text-gray-500">Discount:</div>
-          <div className="text-gray-500">₦{discount.toLocaleString()}</div>
-          <div className="text-2xl font-bold mt-2">TOTAL:</div>
-          <div className="text-2xl font-bold text-[#FFBB00]">₦{(total - discount).toLocaleString()}</div>
-          <button className="bg-[#FFBB00] text-white py-2 px-4 rounded-lg mt-4">
-            Proceed to Checkout
-          </button>
+          <div className="text-gray-500 mb-4">₦{discount.toLocaleString()}</div>
+          <div className="text-2xl font-bold">TOTAL:</div>
+          <div className="text-2xl font-bold text-[#FFBB00] mb-4">₦{(total - discount).toLocaleString()}</div>
         </div>
       </div>
-      <div className="flex justify-start mt-8">
+      <div className="flex justify-between items-center mt-8">
         <Link href="/products">
           <button className="bg-white border border-[#FFBB00] text-[#FFBB00] py-2 px-4 rounded-lg">
             Continue Shopping
           </button>
         </Link>
+        <button className="bg-[#FFBB00] text-white py-2 px-4 rounded-lg">
+          Proceed to Checkout
+        </button>
       </div>
     </div>
   );
