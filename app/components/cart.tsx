@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import CartItem from './CartItem';
-import NavBar from './Navbar'; // Ensure the correct case and path
 
 const cartItems = [
   {
@@ -60,7 +59,7 @@ const Cart: React.FC = () => {
 
   return (
     <>
-      <NavBar />
+      
       <div className="container mx-auto p-4">
         <h1 className="text-2xl font-bold mb-4">My Shopping Cart</h1>
         <div className="flex space-x-4 mb-8">
