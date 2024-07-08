@@ -104,7 +104,7 @@ const ProductList: React.FC = () => {
   return (
     <div className="container mx-auto py-8">
       <div className="flex justify-center mb-8">
-        <button className="text-xl font-bold text-yellow-600 px-4 py-2 border-b-2 border-yellow-600">
+        <button className="text-xl font-bold text-[#FFBB00] px-4 py-2 border-b-2 border-yellow-600">
           All
         </button>
         <button className="text-xl font-bold text-gray-700 px-4 py-2">

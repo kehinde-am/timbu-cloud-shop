@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap justify-between">
           <div className="w-full md:w-1/3 mb-6">
-            <h2 className="text-xl font-bold">HilltTech.</h2>
+            <h2 className="text-xl font-normal"style={{ fontFamily: 'Goldman' }}>HilltTech.</h2>
             <p>We are a major distributor<br></br> of Oppo phones and<br></br>accessories in Nigeria.</p>
           </div>
           <div className="w-full md:w-1/3 mb-6">
