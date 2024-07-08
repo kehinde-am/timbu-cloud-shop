@@ -3,8 +3,6 @@
 import React from 'react';
 import NavBar from './Navbar';
 import Breadcrumb from './Breadcrumb';
-import Subscribe from './Subscribe';
-import Footer from './Footer';
 import Link from 'next/link';
 
 const Checkout: React.FC = () => {
@@ -31,26 +29,26 @@ const Checkout: React.FC = () => {
         <form className="space-y-8">
           <div>
             <h2 className="text-xl font-bold mb-2">1. Delivery Information</h2>
-            <div className="grid grid-cols-2 md:grid-cols-2 gap-4">
-              <div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="col-span-1">
                 <label className="block mb-1 font-bold">Full Name*</label>
-                <input type="text" className="border p-2 rounded-md w-1/2" placeholder="John Doe" />
+                <input type="text" className="border p-2 rounded-md w-full" placeholder="John Doe" />
               </div>
-              <div>
+              <div className="col-span-1">
                 <label className="block mb-1 font-bold">Phone Number*</label>
-                <input type="text" className="border p-2 rounded-md w-1/2" placeholder="+234 901 2345 678" />
+                <input type="text" className="border p-2 rounded-md w-full" placeholder="+234 901 2345 678" />
               </div>
-              <div>
-                <label className="block mb-1 font-bold" >Email Address*</label>
-                <input type="text" className="border p-2 rounded-md w-1/2" placeholder="someone@example.com" />
+              <div className="col-span-1">
+                <label className="block mb-1 font-bold">Email Address*</label>
+                <input type="text" className="border p-2 rounded-md w-full" placeholder="someone@example.com" />
               </div>
               <div className="col-span-2">
                 <label className="block mb-1 font-bold">Delivery Address*</label>
-                <input type="text" className="border p-2 rounded-md w-1/2" placeholder="Example: 12, Ikeja Road, Lagos, Nigeria" />
+                <input type="text" className="border p-2 rounded-md w-full" placeholder="Example: 12, Ikeja Road, Lagos, Nigeria" />
               </div>
             </div>
             <div className="mt-2 flex items-center justify-end">
-              <input type="checkbox" className="mr-2 " />
+              <input type="checkbox" className="mr-2" />
               <label>Save for next time</label>
             </div>
           </div>
@@ -77,23 +75,23 @@ const Checkout: React.FC = () => {
             <h2 className="text-xl font-bold mb-2">3. Payment Information</h2>
             <div>
               <input type="radio" id="bankTransfer" name="paymentMethod" className="mr-2" />
-              <label htmlFor="bankTransfer">Bank Transfer</label>
+              <label htmlFor="bankTransfer font-medium">Bank Transfer</label>
             </div>
             <div className="mt-2">
               <input type="radio" id="payViaCard" name="paymentMethod" className="mr-2" />
-              <label htmlFor="payViaCard">Pay via Card</label>
+              <label htmlFor="payViaCard font-medium">Pay via Card</label>
             </div>
             <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label className="block mb-1">Cardholder Name*</label>
+                <label className="block mb-1 font-medium">Cardholder Name*</label>
                 <input type="text" className="border p-2 rounded-md w-full" placeholder="John Doe" />
               </div>
               <div>
-                <label className="block mb-1">Card Number*</label>
+                <label className="block mb-1 font-medium">Card Number*</label>
                 <input type="text" className="border p-2 rounded-md w-full" placeholder="1234 1234 1234 1234" />
               </div>
               <div>
-                <label className="block mb-1">Expiry*</label>
+                <label className="block mb-1 font-medium">Expiry*</label>
                 <input type="text" className="border p-2 rounded-md w-full" placeholder="MM/YY" />
               </div>
               <div>
@@ -116,16 +114,17 @@ const Checkout: React.FC = () => {
           </div>
           <div className="flex justify-between mt-8 items-center">
             <Link href="/cart">
-              <button className="bg-white border border-[#FFBB00] text-[#FFBB00] py-2 px-4 rounded-lg">
+              <button className="bg-white border border-[#FFBB00] text-[#1B1A1A] font-bold py-2 px-4 rounded-lg">
                 Back to Cart
               </button>
             </Link>
-            <button type="submit" className="bg-[#FFBB00] text-white py-2 px-4 rounded-lg">
+            <button type="submit" className="bg-[#FFBB00] text-[#1B1A1A] font-bold py-2 px-4 rounded-lg">
               Checkout
             </button>
           </div>
         </form>
       </div>
+      
     </>
   );
 };

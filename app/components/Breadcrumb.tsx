@@ -23,14 +23,14 @@ const Breadcrumb: React.FC = () => {
   };
 
   return (
-    <div className="bg-gray-200 p-2">
+    <div className="bg-gray-200 p-4">
       <div className="container mx-auto">
         <nav className="text-gray-600">
-          <Link href="/" className="hover:underline">Home</Link>
+          <Link href="/" className="hover:bg-[#FFBB00] font-bold">Home</Link>
           {paths.length > 0 && (
             <>
               {' / '}
-              <Link href="/products" className="hover:underline">Products</Link>
+              <Link href="/products" className="hover:bg-[#FFBB00] font-bold">Products</Link>
             </>
           )}
           {paths.map((path, index) => {
