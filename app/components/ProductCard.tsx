@@ -7,7 +7,7 @@ interface ProductCardProps {
   image: string;
   rating: number;
   reviews: number;
-  isNewArrival: boolean; // Add a new prop to indicate if the product is a new arrival
+  isNewArrival: boolean; 
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ name, price, image, rating, reviews, isNewArrival }) => {
@@ -15,16 +15,16 @@ const ProductCard: React.FC<ProductCardProps> = ({ name, price, image, rating, r
     <div className="flex flex-col items-center">
       <div className="border p-4 rounded-[30px] shadow-md relative bg-[#D9D9D9]" style={{ width: '310px', height: '408px' }}>
         {isNewArrival && (
-          <div className="absolute top-2 right-2 bg-yellow-400 text-white px-2 py-1 rounded-full">
+          <div className="absolute top-3 right-3 bg-yellow-400 text-white px-2 py-1 rounded-full">
             Newest Arrivals
           </div>
         )}
-        <div className="relative w-full h-60 mb-12">
-          <Image src={image} alt={name} layout="fill" objectFit="contain" className="rounded-[30px]" />
+        <div className="relative w-full h-60 mt-14 mb-8">
+          <Image src={image} alt={name} layout="fill" objectFit="contain" className="rounded-[20px]" />
         </div>
-        <div className="flex justify-between items-center mt-auto w-full">
-          <button className="bg-yellow-500 text-white py-2 px-4 rounded-lg">Add to Cart</button>
-          <button aria-label="Add to Wishlist" className="relative w-10 h-20">
+        <div className="flex justify-between items-center mt-auto w-full px-4 pb-4">
+        <button className="bg-yellow-500 text-black py-2 px-4 rounded-lg font-bold">Add to Cart</button>
+          <button aria-label="Add to Wishlist" className="relative w-8 h-8 ml-4">
             <Image src="/images/Add to Wishlist.png" alt="Add to Wishlist" layout="fill" objectFit="contain" />
           </button>
         </div>
