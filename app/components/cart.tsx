@@ -3,6 +3,10 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import CartItem from './CartItem';
+import Breadcrumb from './Breadcrumb';
+import Subscribe from './Subscribe';
+import Footer from './Footer';
+import NavBar from './Navbar'; // Ensure NavBar is imported correctly
 
 const cartItems = [
   {
@@ -58,69 +62,75 @@ const Cart: React.FC = () => {
   const total = items.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">My Shopping Cart</h1>
-      <div className="flex space-x-4 mb-8">
-        <div className="flex items-center space-x-2">
-          <span className="bg-[#FFBB00] text-white py-1 px-3 rounded-full">1</span>
-          <span>Shopping Cart</span>
-        </div>
-        <div className="flex items-center space-x-2 text-gray-500">
-          <span className="bg-gray-200 text-gray-500 py-1 px-3 rounded-full">2</span>
-          <span>Checkout</span>
-        </div>
-        <div className="flex items-center space-x-2 text-gray-500">
-          <span className="bg-gray-200 text-gray-500 py-1 px-3 rounded-full">3</span>
-          <span>Order Complete</span>
-        </div>
-      </div>
-      <div>
-        {items.map((item, index) => (
-          <CartItem
-            key={index}
-            item={item}
-            onQuantityChange={(quantity) => handleQuantityChange(index, quantity)}
-            onRemove={() => handleRemoveItem(index)}
-          />
-        ))}
-      </div>
-      <div className="flex justify-between items-center mt-8">
-        <div className="flex flex-col">
-          <label className="mb-2 font-bold">Promotional Code</label>
-          <div className="flex items-center">
-            <input
-              type="text"
-              value={promoCode}
-              onChange={handlePromoCodeChange}
-              className="border p-2 rounded-md"
-              placeholder="Enter code"
-            />
-            <button
-              onClick={handleApplyPromoCode}
-              className="bg-[#FFBB00] text-white py-2 px-4 rounded-lg ml-2"
-            >
-              Apply
-            </button>
+    <>
+      <NavBar />
+      <Breadcrumb />
+      <div className="container mx-auto p-4">
+        <h1 className="text-2xl font-bold mb-4">My Shopping Cart</h1>
+        <div className="flex space-x-4 mb-8">
+          <div className="flex items-center space-x-2">
+            <span className="bg-[#FFBB00] text-white py-1 px-3 rounded-full">1</span>
+            <span>Shopping Cart</span>
+          </div>
+          <div className="flex items-center space-x-2 text-gray-500">
+            <span className="bg-gray-200 text-gray-500 py-1 px-3 rounded-full">2</span>
+            <span>Checkout</span>
+          </div>
+          <div className="flex items-center space-x-2 text-gray-500">
+            <span className="bg-gray-200 text-gray-500 py-1 px-3 rounded-full">3</span>
+            <span>Order Complete</span>
           </div>
         </div>
-        <div className="text-right">
-          <div className="text-gray-500">Discount:</div>
-          <div className="text-gray-500">₦{discount.toLocaleString()}</div>
-          <div className="text-2xl font-bold mt-2">TOTAL:</div>
-          <div className="text-2xl font-bold text-[#FFBB00]">₦{(total - discount).toLocaleString()}</div>
-          <button className="bg-[#FFBB00] text-white py-2 px-4 rounded-lg mt-4">
+        <div>
+          {items.map((item, index) => (
+            <CartItem
+              key={index}
+              item={item}
+              onQuantityChange={(quantity) => handleQuantityChange(index, quantity)}
+              onRemove={() => handleRemoveItem(index)}
+            />
+          ))}
+        </div>
+        <div className="flex flex-col md:flex-row justify-between items-start mt-8">
+          <div className="flex flex-col mb-4 md:mb-0">
+            <label className="mb-2 font-bold">Promotional Code</label>
+            <div className="flex items-center">
+              <input
+                type="text"
+                value={promoCode}
+                onChange={handlePromoCodeChange}
+                className="border p-2 rounded-md"
+                placeholder="Enter code"
+              />
+              <button
+                onClick={handleApplyPromoCode}
+                className="bg-[#FFBB00] text-white py-2 px-4 rounded-lg ml-2"
+              >
+                Apply
+              </button>
+            </div>
+          </div>
+          <div className="text-right">
+            <div className="text-gray-500">Discount:</div>
+            <div className="text-gray-500">₦{discount.toLocaleString()}</div>
+            <div className="text-2xl font-bold mt-2">TOTAL:</div>
+            <div className="text-2xl font-bold text-[#FFBB00]">₦{(total - discount).toLocaleString()}</div>
+          </div>
+        </div>
+        <div className="flex justify-between mt-8 items-center">
+          <Link href="/products">
+            <button className="bg-white border border-[#FFBB00] text-[#FFBB00] py-2 px-4 rounded-lg">
+              Continue Shopping
+            </button>
+          </Link>
+          <button className="bg-[#FFBB00] text-white py-2 px-4 rounded-lg">
             Proceed to Checkout
           </button>
         </div>
       </div>
-      <div className="flex justify-start mt-8">
-        <Link href="/products">
-          <button className="bg-white border border-[#FFBB00] text-[#FFBB00] py-2 px-4 rounded-lg">
-            Continue Shopping
-          </button>
-        </Link>
-      </div>
-    </div>
+      <Subscribe />
+      <Footer />
+    </>
   );
 };
 
