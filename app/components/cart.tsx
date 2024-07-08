@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import CartItem from './CartItem';
-import NavBar from './Navbar';
+import NavBar from './Navbar'; // Ensure the correct case and path
 
 const cartItems = [
   {
@@ -116,7 +116,7 @@ const Cart: React.FC = () => {
             </button>
           </div>
         </div>
-        <div className="flex justify-end mt-8">
+        <div className="flex justify-between mt-8">
           <Link href="/products">
             <button className="bg-white border border-[#FFBB00] text-[#FFBB00] py-2 px-4 rounded-lg">
               Continue Shopping
