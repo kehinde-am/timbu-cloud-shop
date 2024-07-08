@@ -1,1 +1,1 @@
-###  Timbu - Online shooping store
+###  Timbu - Online shopping store
