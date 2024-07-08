@@ -15,7 +15,7 @@ const Subscribe: React.FC = () => {
           />
           <button
             type="submit"
-            className="bg-yellow-500 text-black font-bold py-2 px-4 rounded-md"
+            className="bg-[#FFBB00] text-black font-bold py-2 px-4 rounded-md"
           >
             Subscribe
           </button>
