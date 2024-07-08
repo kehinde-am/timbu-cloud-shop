@@ -1,96 +1,117 @@
-"use client"
+'use client';
+
 import React, { useState } from 'react';
 import Link from 'next/link';
 import CartItem from './CartItem';
 
+const cartItems = [
+  {
+    name: 'Oppo Reno A 77s',
+    productNumber: 'HT008',
+    color: 'Orange',
+    price: 165000,
+    image: '/images/Rectangle 40.png',
+    quantity: 1,
+  },
+  {
+    name: 'Oppo Enco W31',
+    productNumber: 'HT007',
+    color: 'Black',
+    price: 90000,
+    image: '/images/Rectangle 38.png',
+    quantity: 2,
+  },
+  {
+    name: 'Oppo Reno 11 5G',
+    productNumber: 'HT003',
+    color: 'Green',
+    price: 300000,
+    image: '/images/Rectangle 34.png',
+    quantity: 1,
+  },
+];
+
 const Cart: React.FC = () => {
-  const [cartItems, setCartItems] = useState([
-    {
-      name: 'Oppo Reno A 77s',
-      productNumber: 'HT008',
-      price: 165000,
-      quantity: 1,
-      image: '/images/Rectangle 39.png',
-      color: 'Orange',
-    },
-    {
-      name: 'Oppo Enco W31',
-      productNumber: 'HT007',
-      price: 90000,
-      quantity: 2,
-      image: '/images/Rectangle 38.png',
-      color: 'Black',
-    },
-    {
-      name: 'Oppo Reno 11 5G',
-      productNumber: 'HT003',
-      price: 300000,
-      quantity: 1,
-      image: '/images/Rectangle 34.png',
-      color: 'Green',
-    },
-  ]);
+  const [items, setItems] = useState(cartItems);
+  const [promoCode, setPromoCode] = useState('');
+  const [discount, setDiscount] = useState(50000); // Static discount for demonstration purposes
 
-  const handleRemove = (index: number) => {
-    setCartItems(cartItems.filter((_, i) => i !== index));
+  const handleQuantityChange = (index: number, quantity: number) => {
+    const newItems = [...items];
+    newItems[index].quantity = quantity;
+    setItems(newItems);
   };
 
-  const handleIncrease = (index: number) => {
-    setCartItems(
-      cartItems.map((item, i) => (i === index ? { ...item, quantity: item.quantity + 1 } : item))
-    );
+  const handleRemoveItem = (index: number) => {
+    const newItems = items.filter((_, i) => i !== index);
+    setItems(newItems);
   };
 
-  const handleDecrease = (index: number) => {
-    setCartItems(
-      cartItems.map((item, i) => (i === index && item.quantity > 1 ? { ...item, quantity: item.quantity - 1 } : item))
-    );
+  const handlePromoCodeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPromoCode(e.target.value);
   };
 
-  const totalPrice = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
-  const discount = 50000;
-  const finalPrice = totalPrice - discount;
+  const handleApplyPromoCode = () => {
+    // Handle promo code logic here
+  };
+
+  const total = items.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
   return (
-    <div className="container mx-auto py-8">
-      <h1 className="text-3xl font-bold mb-8">My Shopping Cart</h1>
-      <div className="flex items-center mb-4">
-        <div className="flex items-center">
-          <span className="mr-2">1</span>
+    <div className="container mx-auto p-4">
+      <h1 className="text-2xl font-bold mb-4">My Shopping Cart</h1>
+      <div className="flex space-x-4 mb-8">
+        <div className="flex items-center space-x-2">
+          <span className="bg-yellow-500 text-white py-1 px-3 rounded-full">1</span>
           <span>Shopping Cart</span>
         </div>
-        <div className="mx-4">2</div>
-        <div>Checkout</div>
-        <div className="mx-4">3</div>
-        <div>Order Complete</div>
+        <div className="flex items-center space-x-2 text-gray-500">
+          <span className="bg-gray-200 text-gray-500 py-1 px-3 rounded-full">2</span>
+          <span>Checkout</span>
+        </div>
+        <div className="flex items-center space-x-2 text-gray-500">
+          <span className="bg-gray-200 text-gray-500 py-1 px-3 rounded-full">3</span>
+          <span>Order Complete</span>
+        </div>
       </div>
-      <div className="border-t border-b py-4 mb-4">
-        {cartItems.map((item, index) => (
+      <div>
+        {items.map((item, index) => (
           <CartItem
             key={index}
-            {...item}
-            onRemove={() => handleRemove(index)}
-            onIncrease={() => handleIncrease(index)}
-            onDecrease={() => handleDecrease(index)}
+            item={item}
+            onQuantityChange={(quantity) => handleQuantityChange(index, quantity)}
+            onRemove={() => handleRemoveItem(index)}
           />
         ))}
       </div>
-      <div className="mb-4">
-        <label htmlFor="promoCode" className="block mb-2">Promotional Code</label>
-        <div className="flex items-center">
-          <input id="promoCode" type="text" className="border p-2 w-full" />
-          <button className="bg-yellow-500 text-black py-2 px-4">Apply</button>
-        </div>
+      <div className="flex justify-between items-center mt-8">
+        <input
+          type="text"
+          value={promoCode}
+          onChange={handlePromoCodeChange}
+          className="border p-2 rounded-md"
+          placeholder="Promotional Code"
+        />
+        <button
+          onClick={handleApplyPromoCode}
+          className="bg-yellow-500 text-white py-2 px-4 rounded-lg ml-4"
+        >
+          Apply
+        </button>
       </div>
-      <div className="text-right mb-8">
-        <p className="mb-2">Discount: ₦{discount.toLocaleString()}</p>
-        <p className="text-2xl font-bold">Total: ₦{finalPrice.toLocaleString()}</p>
-      </div>
-      <div className="flex justify-between">
-        <Link href="/products" className="border py-2 px-4">
-          Continue Shopping
+      <div className="flex justify-between items-center mt-8">
+        <Link href="/products">
+          <button className="bg-white border border-yellow-500 text-yellow-500 py-2 px-4 rounded-lg">
+            Continue Shopping
+          </button>
         </Link>
-        <button className="bg-yellow-500 text-black py-2 px-4">Proceed to Checkout</button>
+        <div className="text-right">
+          <div className="text-gray-500">Discount: ₦{discount.toLocaleString()}</div>
+          <div className="text-2xl font-bold">Total: <span className="text-yellow-500">₦{(total - discount).toLocaleString()}</span></div>
+          <button className="bg-yellow-500 text-white py-2 px-4 rounded-lg mt-4">
+            Proceed to Checkout
+          </button>
+        </div>
       </div>
     </div>
   );
