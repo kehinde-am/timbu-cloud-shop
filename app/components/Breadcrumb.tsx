@@ -18,10 +18,14 @@ const Breadcrumb: React.FC = () => {
 
   const paths = pathname.split('/').filter(x => x);
 
+  const capitalize = (s: string) => {
+    return s.charAt(0).toUpperCase() + s.slice(1);
+  };
+
   return (
-    <div className="bg-gray-200 p-4">
+    <div className="bg-gray-200 p-2">
       <div className="container mx-auto">
-        <nav className="text-black">
+        <nav className="text-gray-600">
           <Link href="/" className="hover:underline">Home</Link>
           {paths.length > 0 && (
             <>
@@ -35,9 +39,9 @@ const Breadcrumb: React.FC = () => {
               <span key={index}>
                 {' / '}
                 {index === paths.length - 1 ? (
-                  <span className="text-[#FFBB00] font-bold">{path}</span>
+                  <span className="text-[#FFBB00] font-medium">{capitalize(path)}</span>
                 ) : (
-                  <Link href={href} className="hover:underline">{path}</Link>
+                  <Link href={href} className="hover:underline">{capitalize(path)}</Link>
                 )}
               </span>
             );
