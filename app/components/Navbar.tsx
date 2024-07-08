@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation'; 
+import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 
 const NavBar: React.FC = () => {
@@ -13,19 +13,23 @@ const NavBar: React.FC = () => {
     setIsClient(true);
   }, []);
 
-  const cartItemCount = 3; // This should be dynamically fetched based on your cart state
+  const cartItemCount = 3;
+
+  if (!isClient) {
+    return null;
+  }
 
   return (
-    <div className="bg-white p-4">
+    <div className="bg-white shadow-md p-4">
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center space-x-4">
-          <Link href="/" className={`text-xl font-bold ${isClient && pathname === '/' ? 'text-yellow-600' : 'text-gray-700'}`}>
+          <Link href="/" className={`text-xl font-bold ${pathname === '/' ? 'text-yellow-600' : 'text-gray-700'}`}>
             Home
           </Link>
-          <Link href="/products" className={`text-xl font-bold ${isClient && pathname === '/products' ? 'text-yellow-600' : 'text-gray-700'}`}>
+          <Link href="/products" className={`text-xl font-bold ${pathname === '/products' ? 'text-yellow-600' : 'text-gray-700'}`}>
             Products
           </Link>
-          <Link href="/contact" className={`text-xl font-bold ${isClient && pathname === '/contact' ? 'text-yellow-600' : 'text-gray-700'}`}>
+          <Link href="/contact" className={`text-xl font-bold ${pathname === '/contact' ? 'text-yellow-600' : 'text-gray-700'}`}>
             Contact Us
           </Link>
         </div>
@@ -44,7 +48,7 @@ const NavBar: React.FC = () => {
               <div className="text-gray-700">
                 <Image src="/icons/cart.svg" alt="Cart" width={24} height={24} />
                 {cartItemCount > 0 && (
-                  <span className="absolute -top-2 -right-2 bg-[#FF0000] text-white rounded-full px-1 text-xs">
+                  <span className="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 bg-red-600 text-white rounded-full px-1 text-xs">
                     {cartItemCount}
                   </span>
                 )}

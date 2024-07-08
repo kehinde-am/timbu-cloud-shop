@@ -1,12 +1,13 @@
-
+// CartPage.tsx
 import React from 'react';
-import Cart from '../components/cart'
+import Layout from '@/app/layout';
+import Cart from '../components/cart';
 
 const CartPage: React.FC = () => {
   return (
-    <div>
+    <Layout>
       <Cart />
-    </div>
+    </Layout>
   );
 };
 
