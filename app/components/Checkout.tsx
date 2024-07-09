@@ -15,7 +15,7 @@ const Checkout: React.FC = () => {
       <div className="container mx-auto p-4 md:p-10">
         <h1 className="text-2xl font-bold mb-6">Checkout</h1>
         <div className="flex flex-col md:flex-row md:space-x-4 mb-8 font-bold">
-          <div className="flex items-center space-x-2 mb-2 md:mb-0 ">
+          <div className="flex items-center space-x-2 mb-2 md:mb-0">
             <span className="bg-gray-200 text-[#1B1A1A] py-1 px-3 rounded-full">1</span>
             <span className="font-medium">Shopping Cart</span>
           </div>
@@ -57,7 +57,7 @@ const Checkout: React.FC = () => {
           <div>
             <h2 className="text-xl font-bold mb-2">2. Delivery Method</h2>
             <div className="flex flex-col md:flex-row justify-between space-y-4 md:space-y-0">
-              <div className="flex flex-col md:flex-row items-start md:items-center">
+              <div className="flex items-center">
                 <input type="radio" id="homeDelivery" name="deliveryMethod" className="mr-2" />
                 <div>
                   <label htmlFor="homeDelivery">Home Delivery</label>
@@ -66,7 +66,7 @@ const Checkout: React.FC = () => {
                   <p className="text-[#FFBB00] font-bold">COST: Based on delivery location</p>
                 </div>
               </div>
-              <div className="flex flex-col md:flex-row items-start md:items-center">
+              <div className="flex items-center">
                 <input type="radio" id="shopPickup" name="deliveryMethod" className="mr-2" />
                 <div>
                   <label htmlFor="shopPickup">Shop Pickup</label>
@@ -82,6 +82,11 @@ const Checkout: React.FC = () => {
             <div>
               <input type="radio" id="bankTransfer" name="paymentMethod" className="mr-2" />
               <label htmlFor="bankTransfer" className="font-medium">Bank Transfer</label>
+              <div className="ml-6 mt-2">
+                <p>Account Name: <span className="font-bold">HilltTech Inc.</span></p>
+                <p>Bank Name: <span className="font-bold">FirstBank PLC</span></p>
+                <p>Account Number: <span className="font-bold">0123456789</span></p>
+              </div>
             </div>
             <div className="mt-2">
               <input type="radio" id="payViaCard" name="paymentMethod" className="mr-2" />
@@ -97,7 +102,7 @@ const Checkout: React.FC = () => {
                 <div className="relative">
                   <input type="text" className="border p-2 rounded-md w-full pl-12" placeholder="1234 1234 1234 1234" />
                   <div className="absolute inset-y-0 right-0 flex items-center pr-3">
-                    <Image src={cards} alt="Cards" width={150} height={40} />
+                    <Image src={cards} alt="Cards" width={80} height={40} />
                   </div>
                 </div>
               </div>
