@@ -24,17 +24,19 @@ const NavBar: React.FC = () => {
     return `text-xl font-bold ${isActive ? 'text-[#1B1A1A] relative active-link' : 'text-gray-700'}`;
   };
 
+  const showCartItemCount = pathname === '/cart';
+
   return (
     <div className=" p-4 w-full">
       <div className="container mx-auto flex justify-between items-center px-4">
         <div className="flex items-center space-x-4">
-          <Link href="" className={getLinkClass('/prod')}>
+          <Link href="/" className={getLinkClass('/')}>
             Home
           </Link>
           <Link href="/products" className={getLinkClass('/products')}>
             Products
           </Link>
-          <Link href="" className={getLinkClass('/prod')}>
+          <Link href="/contact" className={getLinkClass('/contact')}>
             Contact Us
           </Link>
         </div>
@@ -52,18 +54,17 @@ const NavBar: React.FC = () => {
             <Link href="/cart">
               <div className="text-gray-700">
                 <Image src="/icons/cart.svg" alt="Cart" width={24} height={24} />
-                {cartItemCount > 0 && (
+                {showCartItemCount && cartItemCount > 0 && (
                   <span className="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 bg-red-600 text-white rounded-full px-1 text-xs">
                     {cartItemCount}
                   </span>
                 )}
               </div>
             </Link>
-            </div>
-            <button aria-label="User" className="text-gray-700">
+          </div>
+          <button aria-label="User" className="text-gray-700">
             <Image src="/icons/profile.svg" alt="Profile" width={24} height={24} />
           </button>
-          
         </div>
       </div>
     </div>
