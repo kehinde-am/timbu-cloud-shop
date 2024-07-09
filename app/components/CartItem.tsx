@@ -28,34 +28,34 @@ const CartItem: React.FC<CartItemProps> = ({ item, onQuantityChange, onRemove })
   };
 
   return (
-    <div className="flex items-center justify-between mb-4">
+    <div className="flex flex-col sm:flex-row items-center justify-between mb-4 space-y-2 sm:space-y-0">
       <div className="flex items-center">
-        <div className="relative bg-[#D9D9D9] rounded-lg p-4 shadow" style={{ width: '150px', height: '150px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <div className="bg-[#D9D9D9] rounded-lg p-4 shadow flex justify-center items-center w-24 h-24 sm:w-36 sm:h-36">
           <Image src={item.image} alt={item.name} width={100} height={100} className="rounded-lg" />
         </div>
         <div className="ml-4">
           <h3 className="font-bold">{item.name}</h3>
           <p>Product Number: {item.productNumber}</p>
-          <p>Colour: <span className="inline-block w-3 h-3 rounded-full" style={{ backgroundColor: item.color.toLowerCase() }}></span></p>
-          <p className="text-xl font-bold text-black">₦{item.price.toLocaleString()}</p>
+          <p>Colour: <span className="inline-block w-3 h-3 rounded-full" style={{ backgroundColor: item.color }}></span></p>
+          <p className="text-lg sm:text-xl font-bold text-black">₦{item.price.toLocaleString()}</p>
         </div>
       </div>
       <div className="flex flex-col items-center">
-        <div className="font-bold text-[#FFBB00]">TOTAL</div>
-        <div className="font-bold text-black">₦{(item.price * item.quantity).toLocaleString()}</div>
+        <span className="font-bold text-[#FFBB00]">TOTAL</span>
+        <span className="font-bold text-black">₦{(item.price * item.quantity).toLocaleString()}</span>
       </div>
-      <div className="flex items-center">
-        <button onClick={handleDecreaseQuantity} className="bg-gray-200 text-gray-700 px-2 py-1">
+      <div className="flex items-center space-x-2">
+        <button onClick={handleDecreaseQuantity} className="bg-gray-200 text-gray-700 p-1 text-sm sm:text-base">
           -
         </button>
-        <span className="mx-2">{item.quantity}</span>
-        <button onClick={handleIncreaseQuantity} className="bg-gray-200 text-gray-700 px-2 py-1">
+        <span className="text-lg font-bold">{item.quantity}</span>
+        <button onClick={handleIncreaseQuantity} className="bg-gray-200 text-gray-700 p-1 text-sm sm:text-base">
           +
         </button>
+        <button onClick={onRemove} className="bg-[#E5E5E5] text-black rounded-full p-1 sm:p-2 flex items-center justify-center">
+          ✕
+        </button>
       </div>
-      <button onClick={onRemove} className="bg-[#E5E5E5] text-black rounded-full w-8 h-8 flex items-center justify-center ml-4">
-        ✕
-      </button>
     </div>
   );
 };
