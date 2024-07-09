@@ -10,12 +10,12 @@ input[type="radio"].custom-radio {
 input[type="radio"].custom-radio:checked::before {
   content: '';
   display: block;
-  width: 8px; /* Adjusted the width */
-  height: 8px; /* Adjusted the height */
+  width: 8px; 
+  height: 8px; 
   border-radius: 50%;
   background: black;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Centering the pseudo-element */
+  transform: translate(-50%, -50%); 
 }
