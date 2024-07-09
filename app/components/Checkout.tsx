@@ -6,6 +6,7 @@ import NavBar from './Navbar';
 import Breadcrumb from './Breadcrumb';
 import Link from 'next/link';
 import cards from '../../public/images/cards.svg';
+import '../style.css'
 
 const Checkout: React.FC = () => {
   return (
@@ -68,7 +69,7 @@ const Checkout: React.FC = () => {
             <h2 className="text-xl font-bold mb-2">2. Delivery Method</h2>
             <div className="flex flex-col md:flex-row justify-between space-y-4 md:space-y-0">
               <div className="flex items-start">
-                <input type="radio" id="homeDelivery" name="deliveryMethod" className="mr-2 mt-1" />
+                <input type="radio" id="homeDelivery" name="deliveryMethod" className="mr-2 mt-1 custom-radio" />
                 <div>
                   <label htmlFor="homeDelivery" className="font-medium">Home Delivery</label>
                   <p className="text-[#5F5B5B]">To be delivered to your delivery address above</p>
@@ -77,7 +78,7 @@ const Checkout: React.FC = () => {
                 </div>
               </div>
               <div className="flex items-start">
-                <input type="radio" id="shopPickup" name="deliveryMethod" className="mr-2 mt-1" />
+                <input type="radio" id="shopPickup" name="deliveryMethod" className="mr-2 mt-1 custom-radio" />
                 <div>
                   <label htmlFor="shopPickup" className="font-medium">Shop Pickup</label>
                   <p className="text-[#5F5B5B]">To be picked up by you at the physical branch</p>
@@ -90,7 +91,7 @@ const Checkout: React.FC = () => {
           <div>
             <h2 className="text-xl font-bold mb-2">3. Payment Information</h2>
             <div>
-              <input type="radio" id="bankTransfer" name="paymentMethod" className="mr-2" />
+              <input type="radio" id="bankTransfer" name="paymentMethod" className="mr-2 custom-radio" />
               <label htmlFor="bankTransfer" className="font-medium">Bank Transfer</label>
               <div className="ml-6 mt-2">
                 <p>Account Name: <span className="font-bold">HilltTech Inc.</span></p>
@@ -99,7 +100,7 @@ const Checkout: React.FC = () => {
               </div>
             </div>
             <div className="mt-2">
-              <input type="radio" id="payViaCard" name="paymentMethod" className="mr-2" />
+              <input type="radio" id="payViaCard" name="paymentMethod" className="mr-2 custom-radio" />
               <label htmlFor="payViaCard" className="font-medium">Pay via Card</label>
             </div>
             <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -118,11 +119,11 @@ const Checkout: React.FC = () => {
               </div>
               <div>
                 <label className="block mb-1 font-medium">Expiry*</label>
-                <input type="text" className="border-2 border-[#1B1A1A] p-2 rounded-md w-full" placeholder="MM/YY" />
+                <input type="text" className="border-2 border-black p-2 rounded-md w-full" placeholder="MM/YY" />
               </div>
               <div>
                 <label className="block mb-1">CVV*</label>
-                <input type="text" className="border-2 border-[#1B1A1A] p-2 rounded-md w-full" placeholder="CVV" />
+                <input type="text" className="border-2 border-black p-2 rounded-md w-full" placeholder="CVV" />
               </div>
             </div>
             <div className="mt-2 flex items-center">
@@ -132,7 +133,7 @@ const Checkout: React.FC = () => {
           </div>
           <div>
             <h2 className="text-xl font-bold mb-2">4. Order Notes</h2>
-            <textarea className="border-2 border-[#1B1A1A] p-2 rounded-md w-full" rows={4} placeholder="Message"></textarea>
+            <textarea className="border-2 border-black p-2 rounded-md w-full" rows={4} placeholder="Message"></textarea>
           </div>
           <div className="flex items-center mt-4">
             <input type="checkbox" className="mr-2" />

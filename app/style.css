@@ -1,0 +1,21 @@
+input[type="radio"].custom-radio {
+    appearance: none;
+    border: 1px solid #000;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    position: relative;
+  }
+  
+  input[type="radio"].custom-radio:checked::before {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: black;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+  }
+  
