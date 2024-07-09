@@ -26,7 +26,7 @@ const Checkout: React.FC = () => {
         </div>
         <div className="flex flex-col md:flex-row md:space-x-4 mb-8 font-bold">
           <div className="flex items-center space-x-2 mb-2 md:mb-0">
-            <span className="bg-gray-200 text-[#1B1A1A] py-1 px-3 rounded-full">1</span>
+            <span className="bg-[#D9D9D9] text-[#1B1A1A] py-1 px-3 rounded-full font-medium">1</span>
             <span className="font-medium">Shopping Cart</span>
           </div>
           <div className="flex items-center space-x-2 mb-2 md:mb-0">
@@ -34,7 +34,7 @@ const Checkout: React.FC = () => {
             <span className="font-bold">Checkout</span>
           </div>
           <div className="flex items-center space-x-2 text-[#1B1A1A]">
-            <span className="bg-gray-200 text-[#1B1A1A] py-1 px-3 rounded-full">3</span>
+            <span className="bg-[#D9D9D9] text-[#1B1A1A] py-1 px-3 rounded-full font-medium">3</span>
             <span className="font-medium">Order Complete</span>
           </div>
         </div>
@@ -44,24 +44,24 @@ const Checkout: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="col-span-1">
                 <label className="block mb-1 font-bold">Full Name*</label>
-                <input type="text" className="border p-2 rounded-md w-full" placeholder="John Doe" />
+                <input type="text" className="border p-2 rounded-md w-full text-[#5F5B5B]" placeholder="John Doe" />
               </div>
               <div className="col-span-1">
                 <label className="block mb-1 font-bold">Phone Number*</label>
-                <input type="text" className="border p-2 rounded-md w-full" placeholder="+234 901 2345 678" />
+                <input type="text" className="border p-2 rounded-md w-full text-[#5F5B5B]" placeholder="+234 901 2345 678" />
               </div>
               <div className="col-span-1">
                 <label className="block mb-1 font-bold">Email Address*</label>
-                <input type="text" className="border p-2 rounded-md w-full" placeholder="someone@example.com" />
+                <input type="text" className="border p-2 rounded-md w-full text-[#5F5B5B]" placeholder="someone@example.com" />
               </div>
               <div className="col-span-2">
                 <label className="block mb-1 font-bold">Delivery Address*</label>
-                <input type="text" className="border p-2 rounded-md w-full" placeholder="Example: 12, Ikeja Road, Lagos, Nigeria" />
+                <input type="text" className="border p-2 rounded-md w-full text-[#5F5B5B]" placeholder="Example: 12, Ikeja Road, Lagos, Nigeria" />
               </div>
             </div>
             <div className="mt-2 flex items-center justify-end">
               <input type="checkbox" className="mr-2" />
-              <label>Save for next time</label>
+              <label className="font-medium">Save for next time</label>
             </div>
           </div>
           <div>
