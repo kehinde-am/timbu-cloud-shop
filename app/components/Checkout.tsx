@@ -5,7 +5,7 @@ import Image from 'next/image';
 import NavBar from './Navbar';
 import Breadcrumb from './Breadcrumb';
 import Link from 'next/link';
-import cards from '../../public/images/cards.svg';  
+import cards from '../../public/images/cards.svg';
 
 const Checkout: React.FC = () => {
   return (
@@ -14,9 +14,9 @@ const Checkout: React.FC = () => {
       <Breadcrumb />
       <div className="container mx-auto p-4 md:p-10">
         <h1 className="text-2xl font-bold mb-6">Checkout</h1>
-        <div className="flex flex-col md:flex-row md:space-x-4 mb-8 font-bold" >
+        <div className="flex flex-col md:flex-row md:space-x-4 mb-8 font-bold">
           <div className="flex items-center space-x-2 mb-2 md:mb-0 ">
-            <span className="bg-gray-200 text-[#1B1A1A]  py-1 px-3 rounded-full">1</span>
+            <span className="bg-gray-200 text-[#1B1A1A] py-1 px-3 rounded-full">1</span>
             <span className="font-medium">Shopping Cart</span>
           </div>
           <div className="flex items-center space-x-2 mb-2 md:mb-0">
@@ -94,9 +94,11 @@ const Checkout: React.FC = () => {
               </div>
               <div className="relative">
                 <label className="block mb-1 font-medium">Card Number*</label>
-                <input type="text" className="border p-2 rounded-md w-full pl-12" placeholder="1234 1234 1234 1234" />
-                <div className="absolute inset-y-0 right-0 w-16 ">
-                  <Image src={cards} alt="Cards" width={272} height={150} />
+                <div className="relative">
+                  <input type="text" className="border p-2 rounded-md w-full pl-12" placeholder="1234 1234 1234 1234" />
+                  <div className="absolute inset-y-0 right-0 flex items-center pr-3">
+                    <Image src={cards} alt="Cards" width={150} height={40} />
+                  </div>
                 </div>
               </div>
               <div>
