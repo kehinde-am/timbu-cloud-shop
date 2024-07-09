@@ -25,7 +25,7 @@ const Breadcrumb: React.FC = () => {
   return (
     <div className="bg-gray-200 p-4">
       <div className="container mx-auto">
-        <nav className="text-gray-600">
+        <nav className="text-[#1B1A1A]">
           <Link href="/" className="hover:bg-[#FFBB00] font-bold">Home</Link>
           {paths.length > 0 && (
             <>
