@@ -14,6 +14,16 @@ const Checkout: React.FC = () => {
       <Breadcrumb />
       <div className="container mx-auto p-4 md:p-10">
         <h1 className="text-2xl font-bold mb-6">Checkout</h1>
+        <div className="mb-4">
+          <p className="text-lg font-medium">
+            Returning Customer? <Link href="#"><span className="text-[#FFBB00]">Click Here to Login</span></Link>
+          </p>
+        </div>
+        <div className="mb-4">
+          <p className="text-[#FF0000] font-medium">
+            Note: all * fields are compulsory
+          </p>
+        </div>
         <div className="flex flex-col md:flex-row md:space-x-4 mb-8 font-bold">
           <div className="flex items-center space-x-2 mb-2 md:mb-0">
             <span className="bg-gray-200 text-[#1B1A1A] py-1 px-3 rounded-full">1</span>
@@ -62,7 +72,7 @@ const Checkout: React.FC = () => {
                 <div>
                   <label htmlFor="homeDelivery" className="font-medium">Home Delivery</label>
                   <p className="text-[#5F5B5B]">To be delivered to your delivery address above</p>
-                  <p className="text-[#1B1A1A]">Estimated Delivery Time: 3 to 5 working days</p>
+                  <p className="text-[#1B1A1A] font-medium">Estimated Delivery Time: 3 to 5 working days</p>
                   <p className="text-[#FFBB00] font-bold">COST: Based on delivery location</p>
                 </div>
               </div>
@@ -71,7 +81,7 @@ const Checkout: React.FC = () => {
                 <div>
                   <label htmlFor="shopPickup" className="font-medium">Shop Pickup</label>
                   <p className="text-[#5F5B5B]">To be picked up by you at the physical branch</p>
-                  <p className="text-[#1B1A1A]">Estimated Delivery Time: Nil</p>
+                  <p className="text-[#1B1A1A] font-medium">Estimated Delivery Time: Nil</p>
                   <p className="text-[#FFBB00] font-bold">COST: Free</p>
                 </div>
               </div>
@@ -102,7 +112,7 @@ const Checkout: React.FC = () => {
                 <div className="relative">
                   <input type="text" className="border p-2 rounded-md w-full pl-12" placeholder="1234 1234 1234 1234" />
                   <div className="absolute inset-y-0 right-0 flex items-center pr-3">
-                    <Image src={cards} alt="Cards" width={80} height={40} />
+                    <Image src={cards} alt="Cards" width={160} height={80} />
                   </div>
                 </div>
               </div>
