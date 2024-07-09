@@ -1,9 +1,11 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import NavBar from './Navbar';
 import Breadcrumb from './Breadcrumb';
 import Link from 'next/link';
+import cards from '../../public/images/cards.svg';  
 
 const Checkout: React.FC = () => {
   return (
@@ -90,9 +92,12 @@ const Checkout: React.FC = () => {
                 <label className="block mb-1 font-medium">Cardholder Name*</label>
                 <input type="text" className="border p-2 rounded-md w-full" placeholder="John Doe" />
               </div>
-              <div>
+              <div className="relative">
                 <label className="block mb-1 font-medium">Card Number*</label>
-                <input type="text" className="border p-2 rounded-md w-full" placeholder="1234 1234 1234 1234" />
+                <input type="text" className="border p-2 rounded-md w-full pl-12" placeholder="1234 1234 1234 1234" />
+                <div className="absolute inset-y-0 right-0 w-16 ">
+                  <Image src={cards} alt="Cards" width={272} height={150} />
+                </div>
               </div>
               <div>
                 <label className="block mb-1 font-medium">Expiry*</label>
