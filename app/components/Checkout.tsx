@@ -57,19 +57,19 @@ const Checkout: React.FC = () => {
           <div>
             <h2 className="text-xl font-bold mb-2">2. Delivery Method</h2>
             <div className="flex flex-col md:flex-row justify-between space-y-4 md:space-y-0">
-              <div className="flex items-center">
-                <input type="radio" id="homeDelivery" name="deliveryMethod" className="mr-2" />
+              <div className="flex items-start">
+                <input type="radio" id="homeDelivery" name="deliveryMethod" className="mr-2 mt-1" />
                 <div>
-                  <label htmlFor="homeDelivery">Home Delivery</label>
+                  <label htmlFor="homeDelivery" className="font-medium">Home Delivery</label>
                   <p className="text-[#5F5B5B]">To be delivered to your delivery address above</p>
                   <p className="text-[#1B1A1A]">Estimated Delivery Time: 3 to 5 working days</p>
                   <p className="text-[#FFBB00] font-bold">COST: Based on delivery location</p>
                 </div>
               </div>
-              <div className="flex items-center">
-                <input type="radio" id="shopPickup" name="deliveryMethod" className="mr-2" />
+              <div className="flex items-start">
+                <input type="radio" id="shopPickup" name="deliveryMethod" className="mr-2 mt-1" />
                 <div>
-                  <label htmlFor="shopPickup">Shop Pickup</label>
+                  <label htmlFor="shopPickup" className="font-medium">Shop Pickup</label>
                   <p className="text-[#5F5B5B]">To be picked up by you at the physical branch</p>
                   <p className="text-[#1B1A1A]">Estimated Delivery Time: Nil</p>
                   <p className="text-[#FFBB00] font-bold">COST: Free</p>
