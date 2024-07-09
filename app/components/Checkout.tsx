@@ -61,7 +61,7 @@ const Checkout: React.FC = () => {
                   <label htmlFor="homeDelivery">Home Delivery</label>
                   <p className="text-[#5F5B5B]">To be delivered to your delivery address above</p>
                   <p className="text-[#1B1A1A]">Estimated Delivery Time: 3 to 5 working days</p>
-                  <p className="text-[#FFBB00] font-bold">COST: ₦10,500.00</p>
+                  <p className="text-[#FFBB00] font-bold">COST: Based on delivery location</p>
                 </div>
               </div>
               <div className="flex flex-col md:flex-row items-start md:items-center">
