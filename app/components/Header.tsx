@@ -20,7 +20,7 @@ const Header: React.FC = () => {
               alt="Oppo buds"
               width={102.87}
               height={135.57}
-              className="absolute bottom-[-1px] left-[-50px] md:bottom-[-1px] md:left-[-150px]"
+              className="absolute bottom-[-20px] left-[50px] md:bottom-[-1px] md:left-[-60px]"
             />
           </div>
         </div>
