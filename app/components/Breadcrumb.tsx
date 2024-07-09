@@ -25,7 +25,7 @@ const Breadcrumb: React.FC = () => {
   return (
     <div className="bg-gray-200 p-4">
       <div className="container mx-auto">
-        <nav className="text-[#1B1A1A]">
+        <nav className="text-[#1B1A1A] text-sm md:text-base">
           <Link href="/" className="hover:bg-[#FFBB00] font-bold">Home</Link>
           {paths.length > 0 && (
             <>
@@ -36,7 +36,7 @@ const Breadcrumb: React.FC = () => {
           {paths.map((path, index) => {
             const href = `/${paths.slice(0, index + 1).join('/')}`;
             return (
-              <span key={index}>
+              <span key={index} className="block md:inline">
                 {' / '}
                 {index === paths.length - 1 ? (
                   <span className="text-[#FFBB00] font-medium">{capitalize(path)}</span>

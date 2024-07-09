@@ -6,7 +6,7 @@ import NavBar from './Navbar';
 import Breadcrumb from './Breadcrumb';
 import Link from 'next/link';
 import cards from '../../public/images/cards.svg';
-import '../style.css'
+import '../style.css'; // Ensure your CSS file is imported
 
 const Checkout: React.FC = () => {
   return (

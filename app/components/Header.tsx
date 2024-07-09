@@ -6,16 +6,22 @@ const Header: React.FC = () => {
   return (
     <div className="bg-gradient-to-r from-blue-200 via-yellow-100 p-4">
       <NavBar />
-      <div className="container mx-auto flex justify-between items-center mt-8 relative">
-        <div className="w-1/2">
-          <h1 className="text-4xl font-bold text-[#07034B]" style={{ fontFamily: 'Dela Gothic One' }}>
+      <div className="container mx-auto mt-8 relative flex flex-col-reverse md:flex-row items-center justify-between">
+        <div className="w-full md:w-1/2 mt-4 md:mt-0 text-center md:text-left">
+          <h1 className="text-3xl md:text-4xl font-bold text-[#07034B]" style={{ fontFamily: 'Dela Gothic One' }}>
             We are a major<br /> distributor of <br />Oppo phones and<br /> accessories in<br /> Nigeria.
           </h1>
         </div>
-        <div className="w-1/2 flex justify-end relative">
+        <div className="w-full md:w-1/2 flex justify-center md:justify-end relative mt-4 md:mt-0">
           <div className="relative">
-            <Image src="/images/reno.png" alt="Oppo phones" width={600} height={451} />
-            <Image src="/images/oppo-buds.png" alt="Oppo buds" width={205.75} height={271.14} className="absolute bottom-[-1px] left-[-150px]" />
+            <Image src="/images/reno.png" alt="Oppo phones" width={300} height={225} className="md:w-auto" />
+            <Image
+              src="/images/oppo-buds.png"
+              alt="Oppo buds"
+              width={102.87}
+              height={135.57}
+              className="absolute bottom-[-1px] left-[-50px] md:bottom-[-1px] md:left-[-150px]"
+            />
           </div>
         </div>
       </div>
