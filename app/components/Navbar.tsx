@@ -25,16 +25,16 @@ const NavBar: React.FC = () => {
   };
 
   return (
-    <div className="p-4 w-full">
+    <div className=" p-4 w-full">
       <div className="container mx-auto flex justify-between items-center px-4">
         <div className="flex items-center space-x-4">
-          <Link href="/" className={getLinkClass('/')}>
+          <Link href="" className={getLinkClass('/prod')}>
             Home
           </Link>
           <Link href="/products" className={getLinkClass('/products')}>
             Products
           </Link>
-          <Link href="/contact" className={getLinkClass('/contact')}>
+          <Link href="" className={getLinkClass('/prod')}>
             Contact Us
           </Link>
         </div>
@@ -59,10 +59,11 @@ const NavBar: React.FC = () => {
                 )}
               </div>
             </Link>
-          </div>
-          <button aria-label="User" className="text-gray-700">
+            </div>
+            <button aria-label="User" className="text-gray-700">
             <Image src="/icons/profile.svg" alt="Profile" width={24} height={24} />
           </button>
+          
         </div>
       </div>
     </div>
