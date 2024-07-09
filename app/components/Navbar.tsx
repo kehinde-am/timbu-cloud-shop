@@ -30,13 +30,13 @@ const NavBar: React.FC = () => {
     <div className=" p-4 w-full">
       <div className="container mx-auto flex justify-between items-center px-4">
         <div className="flex items-center space-x-4">
-          <Link href="/" className={getLinkClass('/')}>
+          <Link href="/" className={getLinkClass('/prod')}>
             Home
           </Link>
           <Link href="/products" className={getLinkClass('/products')}>
             Products
           </Link>
-          <Link href="/contact" className={getLinkClass('/contact')}>
+          <Link href="/contact" className={getLinkClass('/cont')}>
             Contact Us
           </Link>
         </div>
