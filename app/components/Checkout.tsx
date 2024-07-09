@@ -51,7 +51,7 @@ const Checkout: React.FC = () => {
                 <label className="block mb-1 font-bold">Phone Number*</label>
                 <input type="text" className="border-2 border-[#1B1A1A] p-2 rounded-md w-full" placeholder="+234 901 2345 678" />
               </div>
-              <div className="col-span-1">
+              <div className="col-span-2">
                 <label className="block mb-1 font-bold">Email Address*</label>
                 <input type="text" className="border-2 border-[#1B1A1A] p-2 rounded-md w-full" placeholder="someone@example.com" />
               </div>
