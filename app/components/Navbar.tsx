@@ -36,7 +36,7 @@ const NavBar: React.FC = () => {
           <Link href="/products" className={getLinkClass('/products')}>
             Products
           </Link>
-          <Link href="/contact" className={getLinkClass('/cont')}>
+          <Link href="#" className={getLinkClass('/con')}>
             Contact Us
           </Link>
         </div>
