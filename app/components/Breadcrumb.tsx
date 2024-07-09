@@ -30,7 +30,7 @@ const Breadcrumb: React.FC = () => {
           {paths.length > 0 && (
             <>
               {' / '}
-              <Link href="/products" className="hover:bg-[#FFBB00] font-bold">Products</Link>
+              <Link href="/" className="hover:bg-[#FFBB00] font-bold">Products</Link>
             </>
           )}
           {paths.map((path, index) => {

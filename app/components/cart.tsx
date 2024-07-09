@@ -13,7 +13,7 @@ const cartItems = [
     productNumber: 'HT008',
     color: 'Orange',
     price: 165000,
-    image: '/images/Rectangle 40.png',
+    image: '/images/Rectangle 36.png',
     quantity: 1,
   },
   {
@@ -27,7 +27,7 @@ const cartItems = [
   {
     name: 'Oppo Reno 11 5G',
     productNumber: 'HT003',
-    color: 'Green',
+    color: '#B2D2C5',
     price: 300000,
     image: '/images/Rectangle 34.png',
     quantity: 1,
@@ -37,7 +37,7 @@ const cartItems = [
 const Cart: React.FC = () => {
   const [items, setItems] = useState(cartItems);
   const [promoCode, setPromoCode] = useState('');
-  const [discount, setDiscount] = useState(50000); // Static discount for demonstration purposes
+  const [discount, setDiscount] = useState(0.0); // Static discount for demonstration purposes
   const router = useRouter();
 
   const handleQuantityChange = (index: number, quantity: number) => {
@@ -69,19 +69,19 @@ const Cart: React.FC = () => {
     <>
       <NavBar />
       <Breadcrumb />
-      <div className="container mx-auto p-4">
+      <div className="container mx-auto p-4 w-full">
         <h1 className="text-2xl font-bold mb-4">My Shopping Cart</h1>
         <div className="flex space-x-4 mb-8">
-          <div className="flex items-center space-x-2">
-            <span className="bg-[#FFBB00] text-white py-1 px-3 rounded-full">1</span>
+          <div className="flex items-center space-x-2 font-bold">
+            <span className="bg-[#FFBB00] text-[#1B1A1A] py-1 px-3 rounded-full">1</span>
             <span>Shopping Cart</span>
           </div>
-          <div className="flex items-center space-x-2 text-gray-500">
-            <span className="bg-gray-200 text-gray-500 py-1 px-3 rounded-full">2</span>
+          <div className="flex items-center space-x-2 text-[#1B1A1A] font-medium">
+            <span className="bg-gray-200 text-[#1B1A1A] py-1 px-3 rounded-full">2</span>
             <span>Checkout</span>
           </div>
-          <div className="flex items-center space-x-2 text-gray-500">
-            <span className="bg-gray-200 text-gray-500 py-1 px-3 rounded-full">3</span>
+          <div className="flex items-center space-x-2 text-[#1B1A1A] font-medium">
+            <span className="bg-gray-200 text-[#1B1A1A] py-1 px-3 rounded-full">3</span>
             <span>Order Complete</span>
           </div>
         </div>
@@ -115,23 +115,24 @@ const Cart: React.FC = () => {
             </div>
           </div>
           <div className="text-right">
-            <div className="text-gray-500">Discount:</div>
-            <div className="text-gray-500">₦{discount.toLocaleString()}</div>
-            <div className="text-2xl font-bold mt-2">TOTAL:</div>
-            <div className="text-2xl font-bold text-[#FFBB00]">₦{(total - discount).toLocaleString()}</div>
+            <div className="text-[#FFBB00] font-bold">Discount</div>
+            <div className="text-[#1B1A1A] font-bold">₦{discount.toLocaleString()}</div>
+            <div className="text-2xl font-bold mt-2 text-[#FFBB00]">TOTAL</div>
+            <div className="text-2xl font-bold text-[#1B1A1A]">₦{(total - discount).toLocaleString()}</div>
           </div>
         </div>
-        <div className="flex justify-between mt-8 items-center">
+        <div className="flex justify-between mt-8 items-center w-full">
           <Link href="/products">
-            <button className="bg-white border border-[#FFBB00] text-[#FFBB00] py-2 px-4 rounded-lg">
+            <button className="bg-white border border-[#FFBB00] text-[#1B1A1A] py-2 px-4 rounded-lg font-bold">
               Continue Shopping
             </button>
           </Link>
-          <button onClick={handleProceedToCheckout} className="bg-[#FFBB00] text-white py-2 px-4 rounded-lg">
+          <button onClick={handleProceedToCheckout} className="bg-[#FFBB00] text-[#1B1A1A] py-2 px-4 rounded-lg font-bold">
             Proceed to Checkout
           </button>
         </div>
       </div>
+     
     </>
   );
 };

@@ -20,16 +20,16 @@ const NavBar: React.FC = () => {
   }
 
   return (
-    <div className="bg-white shadow-md p-4">
-      <div className="container mx-auto flex justify-between items-center">
+    <div className="bg-white shadow-md p-4 w-full">
+      <div className="container mx-auto flex justify-between items-center px-4">
         <div className="flex items-center space-x-4">
-          <Link href="/" className={`text-xl font-bold ${pathname === '/' ? 'text-yellow-600' : 'text-gray-700'}`}>
+          <Link href="/" className={`text-xl font-bold ${pathname === '' ? 'text-yellow-600' : 'text-gray-700'}`}>
             Home
           </Link>
-          <Link href="/products" className={`text-xl font-bold ${pathname === '/products' ? 'text-yellow-600' : 'text-gray-700'}`}>
+          <Link href="/" className={`text-xl font-bold ${pathname === '' ? 'text-yellow-600' : 'text-gray-700'}`}>
             Products
           </Link>
-          <Link href="/contact" className={`text-xl font-bold ${pathname === '/contact' ? 'text-yellow-600' : 'text-gray-700'}`}>
+          <Link href="/#" className={`text-xl font-bold ${pathname === '' ? 'text-yellow-600' : 'text-gray-700'}`}>
             Contact Us
           </Link>
         </div>

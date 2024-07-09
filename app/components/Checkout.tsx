@@ -12,16 +12,16 @@ const Checkout: React.FC = () => {
       <Breadcrumb />
       <div className="container mx-auto p-4 md:p-10">
         <h1 className="text-2xl font-bold mb-6">Checkout</h1>
-        <div className="flex flex-col md:flex-row md:space-x-4 mb-8">
-          <div className="flex items-center space-x-2 mb-2 md:mb-0">
-            <span className="bg-gray-200 text-[#1B1A1A] font-medium py-1 px-3 rounded-full">1</span>
+        <div className="flex flex-col md:flex-row md:space-x-4 mb-8 font-bold" >
+          <div className="flex items-center space-x-2 mb-2 md:mb-0 font-bold">
+            <span className="bg-gray-200 text-[#1B1A1A]  py-1 px-3 rounded-full">1</span>
             <span>Shopping Cart</span>
           </div>
           <div className="flex items-center space-x-2 mb-2 md:mb-0">
-            <span className="bg-[#FFBB00] text-[#1B1A1A] font-medium py-1 px-3 rounded-full">2</span>
+            <span className="bg-[#FFBB00] text-[#1B1A1A] font-bold py-1 px-3 rounded-full">2</span>
             <span>Checkout</span>
           </div>
-          <div className="flex items-center space-x-2 text-[#1B1A1A] font-medium">
+          <div className="flex items-center space-x-2 text-[#1B1A1A] font-bold">
             <span className="bg-gray-200 text-[#1B1A1A] py-1 px-3 rounded-full">3</span>
             <span>Order Complete</span>
           </div>
