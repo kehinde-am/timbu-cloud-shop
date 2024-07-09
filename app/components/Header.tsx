@@ -1,37 +1,11 @@
 import React from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
+import NavBar from './Navbar';
 
 const Header: React.FC = () => {
   return (
     <div className="bg-gradient-to-r from-blue-200 via-yellow-100 p-4">
-      <div className="container mx-auto flex justify-between items-center">
-        <div className="flex items-center space-x-4">
-          <Link href="/" className="text-xl font-bold -[#1B1A1A]">
-            Home
-          </Link>
-          <Link href="/" className="text-xl font-bold text-[#1B1A1A]">
-            Products
-          </Link>
-          <Link href="/" className="text-xl font-bold text-[#1B1A1A]">
-            Contact Us
-          </Link>
-        </div>
-        <div className="text-3xl font-bold text-gray-900" style={{ fontFamily: 'Goldman' }}>
-          HilltTech.
-        </div>
-        <div className="flex space-x-4">
-          <button aria-label="Search" className="text-gray-700">
-            <Image src="/icons/search.svg" alt="Search" width={24} height={24} />
-          </button>
-          <button aria-label="Favorites" className="text-gray-700">
-            <Image src="/icons/heart.svg" alt="Favorites" width={24} height={24} />
-          </button>
-          <Link href="/cart" className="text-gray-700">
-            <Image src="/icons/cart.svg" alt="Cart" width={24} height={24} />
-          </Link>
-        </div>
-      </div>
+      <NavBar />
       <div className="container mx-auto flex justify-between items-center mt-8 relative">
         <div className="w-1/2">
           <h1 className="text-4xl font-bold text-[#07034B]" style={{ fontFamily: 'Dela Gothic One' }}>

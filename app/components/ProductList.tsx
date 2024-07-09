@@ -1,5 +1,6 @@
 import React from 'react';
 import ProductCard from './ProductCard';
+import Header from './Header'; // Make sure to update the path if necessary
 
 const products = [
   {
@@ -102,25 +103,28 @@ const products = [
 
 const ProductList: React.FC = () => {
   return (
-    <div className="container mx-auto py-8">
-      <div className="flex justify-center mb-8">
-        <button className="text-xl font-bold text-[#FFBB00] px-4 py-2 border-b-2 border-yellow-600">
-          All
-        </button>
-        <button className="text-xl font-bold text-gray-700 px-4 py-2">
-          Features
-        </button>
-        <button className="text-xl font-bold text-gray-700 px-4 py-2">
-          Best Selling
-        </button>
-        <button className="text-xl font-bold text-gray-700 px-4 py-2">
-          Newest Arrivals
-        </button>
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {products.map((product, index) => (
-          <ProductCard key={index} {...product} />
-        ))}
+    <div>
+      <Header />
+      <div className="container mx-auto py-8">
+        <div className="flex justify-center mb-8">
+          <button className="text-xl font-bold text-[#FFBB00] px-4 py-2 border-b-2 border-yellow-600">
+            All
+          </button>
+          <button className="text-xl font-bold text-[#1B1A1A] px-4 py-2">
+            Features
+          </button>
+          <button className="text-xl font-bold text-[#1B1A1A] px-4 py-2">
+            Best Selling
+          </button>
+          <button className="text-xl font-bold text-[#1B1A1A] px-4 py-2">
+            Newest Arrivals
+          </button>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {products.map((product, index) => (
+            <ProductCard key={index} {...product} />
+          ))}
+        </div>
       </div>
     </div>
   );

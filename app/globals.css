@@ -35,3 +35,22 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+
+.active-link::before, .active-link::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: #FFBB00;
+}
+
+.active-link::before {
+  top: -8px; /* Adjust as necessary */
+}
+
+.active-link::after {
+  bottom: -8px; /* Adjust as necessary */
+}

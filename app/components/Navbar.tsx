@@ -19,17 +19,22 @@ const NavBar: React.FC = () => {
     return null;
   }
 
+  const getLinkClass = (path: string) => {
+    const isActive = pathname === path;
+    return `text-xl font-bold ${isActive ? 'text-[#1B1A1A] relative active-link' : 'text-gray-700'}`;
+  };
+
   return (
-    <div className="bg-white shadow-md p-4 w-full">
+    <div className=" p-4 w-full">
       <div className="container mx-auto flex justify-between items-center px-4">
         <div className="flex items-center space-x-4">
-          <Link href="/" className={`text-xl font-bold ${pathname === '' ? 'text-yellow-600' : 'text-gray-700'}`}>
+          <Link href="/" className={getLinkClass('/')}>
             Home
           </Link>
-          <Link href="/" className={`text-xl font-bold ${pathname === '' ? 'text-yellow-600' : 'text-gray-700'}`}>
+          <Link href="/products" className={getLinkClass('/products')}>
             Products
           </Link>
-          <Link href="/#" className={`text-xl font-bold ${pathname === '' ? 'text-yellow-600' : 'text-gray-700'}`}>
+          <Link href="/contact" className={getLinkClass('/contact')}>
             Contact Us
           </Link>
         </div>
@@ -42,6 +47,9 @@ const NavBar: React.FC = () => {
           </button>
           <button aria-label="Favorites" className="text-gray-700">
             <Image src="/icons/heart.svg" alt="Favorites" width={24} height={24} />
+          </button>
+          <button aria-label="User" className="text-gray-700">
+            <Image src="/icons/profile.svg" alt="Profile" width={24} height={24} />
           </button>
           <div className="relative">
             <Link href="/cart">

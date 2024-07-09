@@ -13,7 +13,7 @@ interface ProductCardProps {
 const ProductCard: React.FC<ProductCardProps> = ({ name, price, image, rating, reviews, isNewArrival }) => {
   return (
     <div className="flex flex-col items-center">
-      <div className="border p-4 rounded-[30px] shadow-md relative bg-[#D9D9D9]" style={{ width: '310px', height: '408px' }}>
+      <div className="border p-4 rounded-[30px]  relative bg-[#D9D9D9]" style={{ width: '310px', height: '408px' }}>
         {isNewArrival && (
           <div className="absolute top-3 right-3 bg-[#FFBB00] text-white px-2 py-1 rounded-full">
             Newest Arrivals
@@ -37,9 +37,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ name, price, image, rating, r
       </div>
       <h3 className="text-lg font-bold mt-4">{name}</h3>
       <div className="flex items-center mt-2">
-        <span className="text-[#FFBB00]">★</span>
-        <span className="ml-1 text-[#FFBB00]">{rating}</span>
-        <span className="text-gray-500 ml-2">({reviews} Reviews)</span>
+        <span className="text-[#FFBB00] font-bold">★</span>
+        <span className="ml-1 text-[#FFBB00] font-bold">{rating}</span>
+        <span className="text-[#5F5B5B] ml-2 font-medium">({reviews} Reviews)</span>
       </div>
       <div className="text-xl font-bold mt-2">₦{price.toLocaleString()}</div>
     </div>
