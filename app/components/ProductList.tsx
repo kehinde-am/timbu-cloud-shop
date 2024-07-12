@@ -1,6 +1,6 @@
 import React from 'react';
 import ProductCard from './ProductCard';
-import Header from './Header'; // Make sure to update the path if necessary
+import Header from './Header'; 
 
 const products = [
   {
